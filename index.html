@@ -19,7 +19,6 @@ content="width=device-width, initial-scale=1.0">
 <body>
 
 <header>
-
     <nav class="navbar">
 
         <div class="logo">
@@ -27,7 +26,6 @@ content="width=device-width, initial-scale=1.0">
         </div>
 
         <ul class="nav-menu">
-            <li><a href="#home">🏠 Home</a></li>
             <li><a href="#produk">💎 Top Up</a></li>
             <li><a href="#produk">💰 Harga</a></li>
             <li><a href="#custom">✨ Custom</a></li>
@@ -38,36 +36,94 @@ content="width=device-width, initial-scale=1.0">
         </a>
 
     </nav>
+</header>
 
-    <section id="home" class="hero">
 
-        <div class="hero-content">
+<section class="products" id="produk">
 
-            <h1>TOP UP ROBUX</h1>
+    <h2>TOP UP ROBUX</h2>
 
-            <p>Cepat • Aman • Terpercaya</p>
+    <div class="product-grid">
 
-            <a href="#produk" class="btn">
-                BELI SEKARANG
-            </a>
-
+        <div class="card">
+            <span class="badge">BEST SELLER</span>
+            <div class="product-icon">💎</div>
+            <h3>100 Robux</h3>
+            <p>Rp15.000</p>
+            <button onclick="pilihProduk('100 Robux - Rp15.000')">
+                Beli Sekarang
+            </button>
         </div>
 
-    </section>
+        <div class="card">
+            <div class="product-icon">💎</div>
+            <h3>200 Robux</h3>
+            <p>Rp30.000</p>
+            <button onclick="pilihProduk('200 Robux - Rp30.000')">
+                Beli Sekarang
+            </button>
+        </div>
 
-</header>  
+        <div class="card">
+            <div class="product-icon">💎</div>
+            <h3>500 Robux</h3>
+            <p>Rp75.000</p>
+            <button onclick="pilihProduk('500 Robux - Rp75.000')">
+                Beli Sekarang
+            </button>
+        </div>
 
-<div class="scroll-down">
+        <div class="card">
+            <div class="product-icon">💎</div>
+            <h3>1000 Robux</h3>
+            <p>Rp150.000</p>
+            <button onclick="pilihProduk('1000 Robux - Rp150.000')">
+                Beli Sekarang
+            </button>
+        </div>
 
-↓
+        <div class="card">
+            <div class="product-icon">💎</div>
+            <h3>2000 Robux</h3>
+            <p>Rp300.000</p>
+            <button onclick="pilihProduk('2000 Robux - Rp300.000')">
+                Beli Sekarang
+            </button>
+        </div>
 
-</div>
+        <div class="card">
+            <div class="product-icon">💎</div>
+            <h3>5000 Robux</h3>
+            <p>Rp750.000</p>
+            <button onclick="pilihProduk('5000 Robux - Rp750.000')">
+                Beli Sekarang
+            </button>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
-</header>
+<section id="custom" class="custom-section">
+
+    <div class="custom-card">
+
+        <h3>✨ Custom Robux</h3>
+
+        <input
+            type="number"
+            id="customRobux"
+            placeholder="Masukkan jumlah Robux">
+
+        <p id="customHarga">Rp0</p>
+
+        <button onclick="beliCustom()">
+          Beli Custom
+        </button>
+
+    </div>
+
+</section>
 
 <section class="stats">
 
@@ -89,115 +145,6 @@ content="width=device-width, initial-scale=1.0">
     <div class="box">
         <h2>★★★★★</h2>
         <p>Customer Rating</p>
-    </div>
-
-</section>
-<section class="products" id="produk">
-
-<h2>TOP UP ROBUX</h2>
-
-<div class="product-grid">
-
-    <div class="card">
-        <span class="badge">BEST SELLER</span>
-        <div class="product-icon">💎</div>
-        <h3>100 Robux</h3>
-        <p>Rp14.000</p>
-        <button onclick="pilihProduk('100 Robux - Rp14.000')">
-            Beli Sekarang
-        </button>
-    </div>
-
-    <div class="card">
-        <div class="product-icon">💎</div>
-        <h3>200 Robux</h3>
-        <p>Rp28.000</p>
-        <button onclick="pilihProduk('200 Robux - Rp28.000')">
-            Beli Sekarang
-        </button>
-    </div>
-
-   <div class="card">
-    <div class="product-icon">💎</div>
-    <h3>500 Robux</h3>
-
-    <p>Rp70.000</p>
-
-    <button onclick="pilihProduk('500 Robux - Rp70.000')">
-        Beli Sekarang
-    </button>
-</div>
-
-    <div class="card">
-
-    <span class="badge-discount">🔥 DISKON</span>
-    <div class="product-icon">💎</div>
-
-    <h3>1000 Robux</h3>
-
-    <p class="old-price">Rp140.000</p>
-
-    <p class="new-price">Rp135.000</p>
-
-    <button onclick="pilihProduk('1000 Robux - Rp135.000')">
-        Beli Sekarang
-    </button>
-
-</div>
-
-    <div class="card">
-
-    <span class="badge-discount">🔥 DISKON</span>
-    <div class="product-icon">💎</div>
-
-    <h3>2000 Robux</h3>
-
-    <p class="old-price">Rp280.000</p>
-
-    <p class="new-price">Rp270.000</p>
-
-    <button onclick="pilihProduk('2000 Robux - Rp270.000')">
-        Beli Sekarang
-    </button>
-
-</div>
-
-    <div class="card">
-
-    <span class="badge-discount">👑 BEST VALUE</span>
-    <div class="product-icon">💎</div>
-
-    <h3>5000 Robux</h3>
-
-    <p class="old-price">Rp750.000</p>
-
-    <p class="new-price">Rp650.000</p>
-
-    <button onclick="pilihProduk('5000 Robux - Rp650.000')">
-        Beli Sekarang
-    </button>
-
-</div>
-
-</section>
-
-<section id="custom" class="custom-section">
-
-    <div class="custom-card">
-
-        <h3>✨ Custom Robux</h3>
-
-        <input
-            type="number"
-            id="customRobux"
-            placeholder="Masukkan jumlah Robux">
-
-        <p id="customHarga">Rp0</p>
-
-        <button onclick="beliCustom()">
-          Beli Custom
-        </button>
-
     </div>
 
 </section>
@@ -261,7 +208,7 @@ content="width=device-width, initial-scale=1.0">
         <div class="avatar">🦊</div>
 
         <div class="admin-info">
-            <h4>Admin May</h4>
+            <h4>May</h4>
             <p>💜 Online</p>
         </div>
 
@@ -275,7 +222,7 @@ content="width=device-width, initial-scale=1.0">
         <div class="avatar">🐉</div>
 
         <div class="admin-info">
-            <h4>Admin qyuya</h4>
+            <h4>qyuya</h4>
             <p>💙 Online</p>
         </div>
 
