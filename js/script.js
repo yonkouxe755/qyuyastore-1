@@ -1,6 +1,6 @@
-const SUPABASE_URL = "https://bsrtlctpzojkxecfhwih.supabase.co";
+const SUPABASE_URL = "https://kziwlhpeqsdvtltmdalp.supabase.co";
 
-const SUPABASE_KEY = "sb_publishable_XKwCq1BJkFhyNXNdJrBo9g_xVK7VnGF";
+const SUPABASE_KEY = "sb_publishable_yUB2BIxMCwk5du2_OoFDtw_ig76r7yA";
 
 const sb = window.supabase.createClient(
     SUPABASE_URL,
@@ -26,14 +26,23 @@ navbar.style.background = "rgba(255,255,255,.08)";
 
 function beliCustom(){
 
-    const robux = document.getElementById("customRobux").value;
+    const robux = parseInt(
+        document.getElementById("customRobux").value
+    ) || 0;
 
-    if(!robux){
+    if(!robux || robux <= 0){
         alert("Masukkan jumlah Robux!");
         return;
     }
 
-    pilihProduk(`${robux} Robux - Custom`);
+    // Harga tetap Rp150 per Robux
+    const hargaPerRobux = 150;
+
+    const total = robux * hargaPerRobux;
+
+    const harga = "Rp" + total.toLocaleString("id-ID");
+
+    pilihProduk(`${robux} Robux - ${harga}`);
 
 }
 
@@ -46,12 +55,8 @@ function pilihProduk(nominal){
     // Reset username
     document.getElementById("username").value = "";
 
-    // Reset admin
-    document.getElementById("adminTerpilih").value = "";
-
-    document.querySelectorAll(".admin-option").forEach(card=>{
-        card.classList.remove("selected");
-    });
+    // Admin otomatis Qyuya
+    document.getElementById("adminTerpilih").value = "Qyuya";
 
     // Reset pembayaran
     document.getElementById("payment").value = "";
@@ -62,18 +67,6 @@ function pilihProduk(nominal){
 function closePopup(){
 
     document.getElementById("popupOrder").style.display = "none";
-
-}
-
-function pilihAdmin(admin, element){
-
-    document.querySelectorAll(".admin-option").forEach(card=>{
-        card.classList.remove("active");
-    });
-
-    element.classList.add("active");
-
-    document.getElementById("adminTerpilih").value = admin;
 
 }
 
@@ -91,30 +84,9 @@ if(username=="" || nominal=="" || payment==""){
 
 }
 
-const adminTerpilih = document.getElementById("adminTerpilih").value;
-
-if(adminTerpilih == ""){
-
-    alert("Silakan pilih admin terlebih dahulu!");
-
-    return;
-
-}
-
-let nomor = "";
-let admin = "";
-
-if(adminTerpilih == "1"){
-
-    nomor = "6281278363732"; // Nomor Admin May
-    admin = "Admin May";
-
-}else if(adminTerpilih == "2"){
-
-    nomor = "6282265057169"; // Nomor Admin Qyuya
-    admin = "Admin Qyuya";
-
-}
+// Admin tetap
+const nomor = "628133240038";
+const admin = "Qyuya";
 
 let pesan =
 `Halo ${admin} 👋
@@ -165,7 +137,6 @@ function togglePayment(){
 
 }
 
-
 function pilihPembayaran(nama){
 
     document.getElementById("payment").value = nama;
@@ -176,7 +147,6 @@ function pilihPembayaran(nama){
 
 }
 
-
 const customInput = document.getElementById("customRobux");
 const customHarga = document.getElementById("customHarga");
 
@@ -186,13 +156,8 @@ if (customInput && customHarga) {
 
         const robux = parseInt(customInput.value) || 0;
 
-        let hargaPerRobux = 140;
-
-        if (robux >= 5000) {
-            hargaPerRobux = 130;
-        } else if (robux >= 1000) {
-            hargaPerRobux = 135;
-        }
+        // Harga tetap Rp150 per Robux
+        const hargaPerRobux = 150;
 
         const total = robux * hargaPerRobux;
 
